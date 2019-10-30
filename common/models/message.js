@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports = function(Costumers) {
+module.exports = function(Message) {
 
-    Costumers.getCostumersName = function(name, callback){
+    Message.getMessageName = function(name, callback){
         new Promise(function(resolve, reject){
             // FIND NAME
-            Costumers.find({where : {nama : {like : name}}}, function(err, result){
+            Message.find({where : {Post : {like : name}}}, function(err, result){
                 if(err) reject (err);
                 if(result === null){
                     err = new Error("user not found");
@@ -22,8 +22,8 @@ module.exports = function(Costumers) {
         });
     };
 
-    Costumers.remoteMethod(
-        'getCostumersName',
+    Message.remoteMethod(
+        'getMessageName',
         {
             description: 'get user by name',
             accepts: [{
@@ -32,7 +32,7 @@ module.exports = function(Costumers) {
         returns: {
             arg: 'res', type: 'object', root:true
         },
-        http: {path: '/getCostumersByName', verb: 'get'}
+        http: {path: '/getMessageByName', verb: 'get'}
         }
     );
 

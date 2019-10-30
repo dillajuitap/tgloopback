@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports = function(Formdompet) {
+module.exports = function(Promote) {
 
-    Formdompet.getFormName = function(name, callback){
+    Promote.getPromoteName = function(name, callback){
         new Promise(function(resolve, reject){
             // FIND NAME
-            Formdompet.find({where : {nama : {like : name}}}, function(err, result){
+            Promote.find({where : {email : {like : name}}}, function(err, result){
                 if(err) reject (err);
                 if(result === null){
                     err = new Error("user not found");
@@ -22,8 +22,8 @@ module.exports = function(Formdompet) {
         });
     };
 
-    Formdompet.remoteMethod(
-        'getFormdompetName',
+    Promote.remoteMethod(
+        'getPromoteName',
         {
             description: 'post user by name',
             accepts: [{
@@ -32,7 +32,7 @@ module.exports = function(Formdompet) {
         returns: {
             arg: 'res', type: 'object', root:true
         },
-        http: {path: '/getFormdompetByName', verb: 'get'}
+        http: {path: '/getPromoteByName', verb: 'get'}
         }
     );
 

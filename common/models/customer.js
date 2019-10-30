@@ -1,11 +1,11 @@
 'use strict';
 
-module.exports = function(Formdompet) {
+module.exports = function(Customer) {
 
-    Formdompet.getFormName = function(name, callback){
+    Customer.getCustomerName = function(name, callback){
         new Promise(function(resolve, reject){
             // FIND NAME
-            Formdompet.find({where : {nama : {like : name}}}, function(err, result){
+            Customer.find({where : {nama : {like : name}}}, function(err, result){
                 if(err) reject (err);
                 if(result === null){
                     err = new Error("user not found");
@@ -22,17 +22,17 @@ module.exports = function(Formdompet) {
         });
     };
 
-    Formdompet.remoteMethod(
-        'getFormdompetName',
+    Customer.remoteMethod(
+        'getCustomerByName',
         {
-            description: 'post user by name',
+            description: 'get user by name',
             accepts: [{
                  arg: 'name', type: 'string'}
         ],
         returns: {
             arg: 'res', type: 'object', root:true
         },
-        http: {path: '/getFormdompetByName', verb: 'get'}
+        http: {path: '/getCustomerByName', verb: 'get'}
         }
     );
 
