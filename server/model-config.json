@@ -58,5 +58,9 @@
   "message": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "registrasi": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

@@ -1,12 +1,16 @@
 {
-  "name": "Message",
+  "name": "registrasi",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "Name": {
+    "NamaDepan": {
+      "type": "string",
+      "required": true
+    },
+    "NamaBelakang": {
       "type": "string",
       "required": true
     },
@@ -14,10 +18,7 @@
       "type": "string",
       "required": true
     },
-    "Phone": {
-      "type": "string"
-    },
-    "Message": {
+    "Password": {
       "type": "string",
       "required": true
     }
