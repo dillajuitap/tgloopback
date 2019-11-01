@@ -2,10 +2,10 @@
 
 module.exports = function(Promote) {
 
-    Promote.getPromoteName = function(name, callback){
+    Promote.getFormName = function(name, callback){
         new Promise(function(resolve, reject){
             // FIND NAME
-            Promote.find({where : {email : {like : name}}}, function(err, result){
+            Promote.find({where : {nama : {like : name}}}, function(err, result){
                 if(err) reject (err);
                 if(result === null){
                     err = new Error("user not found");

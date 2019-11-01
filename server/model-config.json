@@ -59,7 +59,7 @@
     "dataSource": "mongodb",
     "public": true
   },
-  "registrasi": {
+  "discount": {
     "dataSource": "mongodb",
     "public": true
   }

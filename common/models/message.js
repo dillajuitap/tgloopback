@@ -2,10 +2,10 @@
 
 module.exports = function(Message) {
 
-    Message.getMessageName = function(name, callback){
+    Message.getFormName = function(name, callback){
         new Promise(function(resolve, reject){
             // FIND NAME
-            Message.find({where : {Post : {like : name}}}, function(err, result){
+            Message.find({where : {nama : {like : name}}}, function(err, result){
                 if(err) reject (err);
                 if(result === null){
                     err = new Error("user not found");
@@ -25,7 +25,7 @@ module.exports = function(Message) {
     Message.remoteMethod(
         'getMessageName',
         {
-            description: 'get user by name',
+            description: 'post user by name',
             accepts: [{
                  arg: 'name', type: 'string'}
         ],
@@ -37,3 +37,4 @@ module.exports = function(Message) {
     );
 
 };
+

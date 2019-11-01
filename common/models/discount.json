@@ -1,24 +1,16 @@
 {
-  "name": "registrasi",
+  "name": "discount",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "NamaDepan": {
+    "Discount": {
       "type": "string",
       "required": true
     },
-    "NamaBelakang": {
-      "type": "string",
-      "required": true
-    },
-    "Email": {
-      "type": "string",
-      "required": true
-    },
-    "Password": {
+    "Coupons": {
       "type": "string",
       "required": true
     }

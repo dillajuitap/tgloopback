@@ -6,18 +6,42 @@
     "validateUpsert": true
   },
   "properties": {
-    "nama": {
+    "FirstName": {
       "type": "string",
       "required": true
     },
-    "alamat": {
+    "LastName": {
       "type": "string",
       "required": true
     },
-    "NoTlp": {
+    "Address": {
+      "type": "string",
+      "required": true
+    },
+    "District": {
       "type": "string"
     },
-    "email": {
+    "City": {
+      "type": "string",
+      "required": true
+    },
+    "Country": {
+      "type": "string",
+      "required": true
+    },
+    "Province": {
+      "type": "string",
+      "required": true
+    },
+    "Postal Code": {
+      "type": "string",
+      "required": true
+    },
+    "Phone": {
+      "type": "string",
+      "required": true
+    },
+    "Shipping": {
       "type": "string",
       "required": true
     }
